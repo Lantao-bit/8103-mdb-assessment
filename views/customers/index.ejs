@@ -1,0 +1,55 @@
+<%- contentFor('body') %>
+    <h1>Customers</h1>
+
+    <h2>Search</h2>
+    <form method="GET">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" value="<%= searchParams.name || '' %>" />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" class="form-control" value="<%= searchParams.description || '' %>" />
+        </div>
+        <div>
+            <label>Rating</label>
+            <input type="text" name="rating" class="form-control" value="<%= searchParams.rating || '' %>" />
+        </div>
+        <input type="submit" value="Search" class="btn btn-primary btn-sm mt-3 mb-3" />
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>rating</th>
+            <th>updated on</th>
+            <th>Salesperson</th>
+            <th>Action</th>
+        </tr>
+        <% customers.forEach(function(customer) { %>
+            <tr>
+                <td>
+                    <%= customer.Customers.name %>
+                </td>
+                <td>
+                    <%= customer.Customers.description %>
+                </td>
+                <td>
+                    <%= customer.Customers.rating %>
+                </td>
+                <td>
+                    <%= customer.Customers.updated_on %>
+                </td>
+                <td>
+                    <%= customer.Employees.first_name + ' ' + customer.Employees.last_name %>
+                </td>
+                <td>
+                    <a href="/customers/<%= customer.Customers.customer_id %>/edit">Edit</a>
+                </td>
+                <td>
+                    <a href="/customers/<%= customer.Customers.customer_id %>/delete">Delete</a>
+                </td>
+            </tr>
+            <% }); %>
+    </table>

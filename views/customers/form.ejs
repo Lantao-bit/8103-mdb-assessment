@@ -1,0 +1,21 @@
+<div class="mb-3">
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" value="<%= customer?.name %>">
+  </div>
+  <div class="mb-3">
+    <label>Description</label>
+    <input type="text" class="form-control" name="description" value="<%= customer?.description %>">
+  </div>
+  <div class="mb-3">
+    <label>Rating</label>
+    <input type="text" class="form-control" name="rating" value="<%= customer?.rating %>">
+  </div>
+  
+  <div>
+    <label>Salesperson</label>
+    <select name="employee_id" class="form-control" value="<%= customer?.employee_id %>">
+      <% employees.forEach(function(employee) { %>
+        <option value="<%= employee.employee_id %>"><%= employee.first_name %> <%= employee.last_name %></option>
+      <% }); %>
+    </select>
+  </div>

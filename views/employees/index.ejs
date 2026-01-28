@@ -1,0 +1,22 @@
+<%- contentFor('body') %>
+    <h1>Employees</h1>
+    <table class="table">
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>Department</th>
+        </tr>
+        <% employees.forEach(function(employee) { %>
+            <tr>
+                <td>
+                    <%= employee.first_name %>
+                </td>
+                <td>
+                    <%= employee.last_name %>
+                </td>
+                <td>
+                    <%= employee.name %>
+                </td>
+            </tr>
+            <% }); %>
+    </table>
