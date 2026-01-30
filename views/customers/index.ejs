@@ -39,7 +39,7 @@
                     <%= customer.Customers.rating %>
                 </td>
                 <td>
-                    <%= customer.Customers.updated_on.toISOString().split('T')[0] %>
+                    <%= customer.Customers.updated_on.toLocaleString('en-GB') %>
                 </td>
                 <td>
                     <%= customer.Employees.first_name + ' ' + customer.Employees.last_name %>
