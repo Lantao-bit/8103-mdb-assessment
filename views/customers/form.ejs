@@ -15,7 +15,10 @@
     <label>Salesperson</label>
     <select name="employee_id" class="form-control" value="<%= customer?.employee_id %>">
       <% employees.forEach(function(employee) { %>
-        <option value="<%= employee.employee_id %>"><%= employee.first_name %> <%= employee.last_name %></option>
+        <option value="<%= employee.employee_id %>" 
+          <%=employee.employee_id == customer.employee_id? "selected" : "" %> >
+   
+          <%= employee.first_name %> <%= employee.last_name %></option>
       <% }); %>
     </select>
     <br>

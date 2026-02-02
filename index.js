@@ -83,8 +83,8 @@ app.get('/customers', async (req, res) => {
       sql, nestTables: true
     }, bindings);
 
-    console.log(customers);
-    console.log(req.query);
+    //console.log(customers);
+    //console.log(req.query);
 
     res.render('customers/index', {
       customers: customers,
